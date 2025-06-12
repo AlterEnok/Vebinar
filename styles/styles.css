@@ -820,6 +820,8 @@ a {
     z-index: 1;
 }
 
+
+
 /* Блок з текстом + форма */
 .webinar__form-wrapper {
     display: flex;
@@ -988,12 +990,28 @@ a {
 
 
 
+
+
 /* Адаптив */
 @media (min-width: 1900px) and (max-width: 3500px) {
+    .webinar__name {
+        top: 10dvh;
+    }
+
+    .webinar__role {
+        top: 180px;
+    }
+
+    .webinar__desc {
+        top: 25dvh;
+    }
+
     .webinar__form {
         position: relative;
         top: -8dvh;
     }
+
+
 
     .webinar__speaker {
         margin-bottom: 90px;
@@ -1146,5 +1164,6 @@ a {
         font-size: 30px;
     }
 }
+
 
 /* WEBINAR */
