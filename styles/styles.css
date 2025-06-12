@@ -330,6 +330,8 @@ a {
     .card__notice {
         font-size: 27px;
         margin-left: 38px;
+        position: relative;
+        top: 122px;
     }
 
     .card__notice-sub {
@@ -338,12 +340,14 @@ a {
 
     .card__platform {
         margin-left: 75px;
+        top: 125px;
     }
 
     .card__datetime {
         font-size: 20px;
         margin-bottom: 20px;
         margin-left: 73px;
+        top: 138px;
     }
 
     .card__button {
@@ -351,7 +355,7 @@ a {
         justify-content: center;
         font-size: 16px;
         padding: 12px 20px;
-        margin-top: 55px;
+        margin-top: 113px;
         left: -9dvh;
     }
 
@@ -362,14 +366,16 @@ a {
     }
 }
 
-@media (max-width: 430px) {
+
+
+@media (min-width: 375px) and (max-width: 430px) {
     .card__content {
         top: 18dvh;
     }
 
     .card__logo-image {
-        width: 160px;
-        left: 92px;
+        width: 215px;
+        left: 69px;
     }
 
     .card__title {
@@ -386,6 +392,8 @@ a {
     .card__notice {
         font-size: 25px;
         margin-left: 24px;
+        position: relative;
+        top: 66px;
     }
 
     .card__notice-sub {
@@ -394,11 +402,13 @@ a {
 
     .card__platform {
         margin-left: 61px;
+        top: 88px;
     }
 
     .card__datetime {
         font-size: 18px;
         margin-left: 67px;
+        top: 82px;
     }
 
     .card__button {
@@ -413,6 +423,76 @@ a {
         width: 18px;
         height: 18px;
         margin-right: 6px;
+    }
+}
+
+@media (max-width: 430px) and (min-height: 671px) {
+    .card__button {
+        left: -9dvh;
+        top: 182px;
+    }
+
+    .card__datetime {
+        top: 182px;
+        margin-left: 80px;
+    }
+
+    .card__platform {
+        top: 176px;
+        right: -19px;
+    }
+
+    .card__notice {
+        margin-left: 47px;
+        position: relative;
+        top: 168px;
+    }
+
+    .card__logo-image {
+        left: 74px;
+    }
+}
+
+
+@media (width: 360px) and (height: 740px) {
+
+    .card__logo-image {
+        width: 222px;
+        left: 53px;
+        top: -43px;
+    }
+
+    .card__title {
+        left: 11px;
+        top: -34px;
+        font-size: 23px;
+        position: relative;
+    }
+
+    .card__button {
+        left: -11dvh;
+        top: -25px;
+    }
+
+    .card__datetime {
+        top: 74px;
+        margin-left: 58px;
+    }
+
+    .card__platform {
+        top: 74px;
+        right: 11px;
+    }
+
+    .card__notice {
+        margin-left: 47px;
+        position: relative;
+        top: 70px;
+        font-size: 22px;
+    }
+
+    .card__notice-sub {
+        font-size: 18px;
     }
 }
 
@@ -958,7 +1038,7 @@ a {
 
     .webinar__role {
         top: 7dvh;
-        margin-bottom: 70px;
+        margin-bottom: 78px;
     }
 
     .webinar__blur {
@@ -971,6 +1051,7 @@ a {
         margin-right: 44px;
         margin-bottom: 20px;
         width: 366px;
+        height: 560px;
     }
 
     .webinar__form-title {
@@ -1055,6 +1136,13 @@ a {
 
     .webinar__form input[type="tel"] {
         width: 73%;
+    }
+}
+
+@media (width: 360px) and (height: 740px) {
+    .webinar__role {
+        top: 6dvh;
+        font-size: 30px;
     }
 }
 
