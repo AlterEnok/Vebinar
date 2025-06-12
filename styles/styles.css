@@ -995,11 +995,11 @@ a {
 /* Адаптив */
 @media (min-width: 1900px) and (max-width: 3500px) {
     .webinar__name {
-        top: 10dvh;
+        top: 15dvh;
     }
 
     .webinar__role {
-        top: 180px;
+        top: 200px;
     }
 
     .webinar__desc {
