@@ -6,9 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Доброзем Вебінар</title>
     <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.19/build/css/intlTelInput.min.css" />
+
+
 </head>
 
 <body>
+    <div id="preloader">
+        <div class="preloader__content">
+            <img src="img/logo.svg" alt="Доброзем лого" class="preloader__logo" />
+        </div>
+    </div>
+
 
     <main class="card">
         <div class="container card__container">
@@ -28,53 +37,178 @@
 
                 <p class="card__datetime">1 липня 2025 року | 14:00</p>
 
-                <button class="card__button">
+                <a href="#form" class="card__button">
                     <span class="card__button-wave"></span>
                     <img src="img/logo-btn.svg" alt="logo" class="card__button-icon" />
-                    <span class="card__button-text">Зареєструватись</span>
-                </button>
+                    <span class="card__button-text">Зареєструватись</span> </a>
             </div>
 
 
             <img src="img/man.png" alt="Man" class="card__man" />
         </div>
 
-        <!-- FOR WHOM -->
-
-
-
     </main>
 
-    <section class="for-whom">
-        <div class="for-whom__container container">
-            <h2 class="for-whom__title">Для кого?</h2>
-            <div class="for-whom__cards">
-                <div class="for-whom__card">
-                    <p class="for-whom__text">
+    <!-- SECOND SCREEN -->
+
+    <section class="audience">
+        <div class="audience__bg"></div>
+        <div class="audience__container container">
+            <h2 class="audience__title">Для кого?</h2>
+
+            <div class="audience__cards">
+                <div class="audience__card">
+                    <p class="audience__text">
                         Фермерів, які прагнуть зберегти та збільшити площі без витрати своїх коштів та залучення
                         кредитів
                     </p>
-                    <img src="img/icons/plant.svg" alt="Иконка ростка" class="for-whom__icon">
+                    <img src="img/icons/plant.svg" alt="" class="audience__icon" />
 
                 </div>
-                <div class="for-whom__card">
-                    <p class="for-whom__text">
+                <div class="audience__card">
+                    <p class="audience__text">
                         Орендарів, які розглядають покупку паїв
                     </p>
-                    <img src="img/icons/home.svg" alt="Іконка будинку" class="for-whom__icon">
+                    <img src="img/icons/home.svg" alt="" class="audience__icon" />
 
                 </div>
-                <div class="for-whom__card">
-                    <p class="for-whom__text">
+                <div class="audience__card">
+                    <p class="audience__text">
                         Аграріїв, які хочуть дізнатися про безпечні та швидкі способи придбання землі.
                     </p>
-                    <img src="img/icons/key.svg" alt="Іконка ключа" class="for-whom__icon">
+                    <img src="img/icons/key.svg" alt="" class="audience__icon" />
 
                 </div>
             </div>
+
+            <h2 class="audience__subtitle">Що ви отримаєте на вебінарі?</h2>
+
+            <div class="audience__benefits">
+                <div class="audience__benefits-top">
+                    <div class="audience__benefit dark">
+                        <img src="img/hat.svg" alt="" class="audience__benefit-icon" />
+                        <p class="audience__benefit-text">
+                            Практичні поради щодо збереження та розширення земельного банку без кредитів
+                        </p>
+                    </div>
+                    <div class="audience__benefit light">
+                        <img src="img/hat.svg" alt="" class="audience__benefit-icon" />
+                        <p class="audience__benefit-text">Наш алгоритм роботи з «Доброзем»</p>
+                    </div>
+                </div>
+
+                <div class="audience__benefits-bottom">
+                    <div class="audience__benefit light">
+                        <img src="img/hat.svg" alt="" class="audience__benefit-icon" />
+                        <p class="audience__benefit-text">
+                            Відповіді на часті питання: ціна паю, документи, ризики, де знайти продавця та покупця.
+                        </p>
+                    </div>
+                    <div class="audience__benefit light">
+                        <img src="img/hat.svg" alt="" class="audience__benefit-icon" />
+                        <p class="audience__benefit-text">Живі кейси і приклади успішних угод.</p>
+                    </div>
+                    <div class="audience__benefit dark">
+                        <img src="img/hat.svg" alt="" class="audience__benefit-icon" />
+                        <p class="audience__benefit-text">
+                            Можливість поставити запитання експерту та отримати на них відповіді
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <a href="#form" class="audience__button">
+                <span class="audience__button-wave"></span>
+                <img src="img/logo-btn.svg" alt="logo" class="audience__button-icon" />
+                <span class="audience__button-text">Зареєструватись на вебінар</span>
+            </a>
+
+
         </div>
     </section>
 
+    <!-- WEBINAR-FORM -->
+
+    <section class="webinar">
+        <div class="webinar__container">
+
+            <!-- Блок: Спікер -->
+            <h2 class="webinar__title">Про спікера</h2>
+            <div class="webinar__speaker">
+                <img src="img/man.png" alt="Роман Барало" class="webinar__speaker-img" />
+                <div class="webinar__speaker-info">
+
+                    <h3 class="webinar__name">Роман Барало</h3>
+                    <p class="webinar__role">
+                        CEO <span class="webinar__role-gradient">Доброзем</span>
+                    </p>
+                    <p class="webinar__desc">
+                        Експерт з інвестицій у сільськогосподарську землю з понад 7-річним досвідом
+                    </p>
+                    <p class="webinar__desc">
+                        Очолює компанію «Доброзем» — перший в Україні онлайн-маркетплейс з купівлі-продажу
+                        сільськогосподарської землі. Активно
+                        популяризує інвестування в українську землю: сам інвестує та виступає на вебінарах/конференціях,
+                        де розповідає про
+                        особливості безпечних угод, ризики та переваги земельних вкладень
+                    </p>
+                </div>
+                <div class="webinar__blur"></div>
+            </div>
+
+            <!-- Блок: Текст + Форма -->
+            <div class="webinar__form-wrapper">
+                <div class="webinar__form-text">
+                    <h2 class="webinar__form-title">
+                        <span class="webinar__form-title-bold">Реєструйтесь</span> на вебінар
+                    </h2>
+
+                    <p class="webinar__form-paragraph">
+                        На вебінарі Роман поділиться реальними кейсами з практики та розповість:
+                    </p>
+
+                    <ul class="webinar__form-list">
+                        <li>– як безпечно інвестувати в землю;</li>
+                        <li>– які підводні камені чекають покупців і продавців;</li>
+                        <li>– як уникнути типових помилок при угодах;</li>
+                        <li>– відповість на питання фермерів та власників паїв у прямому ефірі.</li>
+                    </ul>
+
+                    <p class="webinar__form-paragraph-bottom">
+                        У своїх публічних виступах Роман Барало часто коментує питання земельної реформи, інвестицій у
+                        землю та
+                        фінансового моніторингу угод. Він підкреслює важливість прозорості ринку та необхідність захисту
+                        інтересів
+                        фермерів і малих власників.
+                        Не пропустіть унікальну можливість отримати знання з перших вуст та ухвалити грамотні
+                        рішення щодо
+                        земельних активів!
+                    </p>
+                </div>
+
+
+                <div class="webinar__form-block">
+                    <form class="webinar__form" id="form">
+                        <input type="text" id="fullname" name="fullname" placeholder="Ім’я та прізвище" required />
+                        <input type="email" id="email" name="email" placeholder="E-mail" required />
+                        <input type="tel" id="phone" name="phone" required />
+                        <input type="text" id="occupation" name="occupation" placeholder="Рід діяльності" />
+                        <button class="webinar__button" type="submit">
+                            <span class="webinar__button-wave"></span>
+                            <img src="img/logo-btn.svg" alt="logo" class="webinar__button-icon" />
+                            <span class="webinar__button-text">Зареєструватись</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.19/build/js/intlTelInput.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 

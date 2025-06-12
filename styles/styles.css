@@ -44,29 +44,56 @@ html {
     font-family: 'Dobrozem', sans-serif;
     height: 100%;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 body {
-    background: linear-gradient(180deg, #fff 0%, #0077cf 100%);
+    background: #fff;
     overflow-x: hidden;
 }
 
-.page {
-    position: relative;
-    min-height: 100vh;
-}
-
-.page__background {
+#preloader {
     position: fixed;
-    inset: 0;
-    z-index: -1;
-    overflow: hidden;
-}
-
-.page__bg-image {
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.preloader__logo {
+    width: 230px;
+    height: 120px;
+    animation: pulse 1.8s infinite ease-in-out;
+    opacity: 0.95;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.95;
+    }
+
+    50% {
+        transform: scale(1.08);
+        opacity: 1;
+    }
+}
+
+#preloader.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+a {
+    text-decoration: none;
 }
 
 /* ====== Container ====== */
@@ -93,7 +120,20 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     z-index: 1;
-    padding-bottom: 78px;
+    padding-bottom: 160px;
+}
+
+.card__gradient-bar {
+    position: absolute;
+    bottom: -111px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 99vw;
+    height: 72px;
+    border-radius: 3px;
+    background: linear-gradient(360deg, rgba(78, 83, 0, 0) 0%, #fff 100%);
+    z-index: 6;
+    pointer-events: none;
 }
 
 .card__container {
@@ -112,8 +152,8 @@ body {
 }
 
 .card__logo-image {
-    width: 280px;
-    height: 78px;
+    width: 360px;
+    height: 100px;
 }
 
 /* ====== Title ====== */
@@ -134,6 +174,8 @@ body {
     color: #fff;
     margin-bottom: 30px;
     margin-left: 27px;
+    position: relative;
+    top: 57px;
 }
 
 .card__notice {
@@ -157,6 +199,9 @@ body {
     margin-bottom: 13px;
     margin-top: 21px;
     margin-left: 135px;
+    position: relative;
+    top: 61px;
+    right: -10px;
 }
 
 /* ====== Button ====== */
@@ -164,7 +209,8 @@ body {
     position: relative;
     display: inline-flex;
     align-items: center;
-    padding: 14px 28px;
+    justify-content: center;
+    padding: 55px 54px;
     background-color: transparent;
     color: #fff;
     font-size: 18px;
@@ -174,6 +220,8 @@ body {
     cursor: pointer;
     margin-left: 122px;
     transition: color 0.3s ease, border-color 0.3s ease;
+    top: 55px;
+    height: 60px;
 }
 
 .card__button-wave {
@@ -190,17 +238,22 @@ body {
 }
 
 .card__button-icon {
-    width: 24px;
-    height: 24px;
+    width: 48px;
+    height: 50px;
     margin-right: 10px;
     position: relative;
     z-index: 1;
-    transition: transform 0.6s ease;
+    transition: transform 0.4s ease;
+    flex-shrink: 0;
 }
 
 .card__button-text {
     position: relative;
     z-index: 1;
+}
+
+.card__button:hover .card__button-icon {
+    transform: scale(1.3);
 }
 
 .card__button:hover .card__button-icon {
@@ -217,13 +270,14 @@ body {
     max-height: 90vh;
     height: auto;
     object-fit: contain;
-    z-index: 1;
+    z-index: 5;
     position: relative;
-    top: 78px;
+    top: 188px;
 
 }
 
 /* MEDIA */
+
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -289,7 +343,7 @@ body {
     .card__datetime {
         font-size: 20px;
         margin-bottom: 20px;
-        margin-left: 48px;
+        margin-left: 73px;
     }
 
     .card__button {
@@ -339,20 +393,20 @@ body {
     }
 
     .card__platform {
-        margin-left: 75px;
+        margin-left: 61px;
     }
 
     .card__datetime {
         font-size: 18px;
-        margin-left: 73px;
+        margin-left: 67px;
     }
 
     .card__button {
         width: 78%;
         font-size: 15px;
         padding: 10px 16px;
-        margin-top: 45px;
-        left: -9dvh;
+        margin-top: 21px;
+        left: -12dvh;
     }
 
     .card__button-icon {
@@ -364,63 +418,643 @@ body {
 
 /* MEDIA */
 
-/* FOR-WHOM */
-.for-whom {
+/* AUDIENCE */
+.audience {
+    position: relative;
     padding: 60px 0;
+    color: #fff;
+    background-color: #000;
 }
 
-.for-whom__container {
-    max-width: 1140px;
+.audience__bg {
+    position: absolute;
+    inset: 0;
+    background: url('../img/audience.jpg') center/cover no-repeat;
+    z-index: 1;
+}
+
+.audience__container {
+    position: relative;
+    z-index: 2;
+    max-width: 1380px;
     margin: 0 auto;
     padding: 0 15px;
     display: block;
 }
 
-.for-whom__title {
-    font-size: 32px;
+.audience__title,
+.audience__subtitle {
+    font-size: 56px;
     font-weight: 700;
-    margin-bottom: 40px;
     text-align: center;
-    /* по центру */
+    margin-bottom: 30px;
 }
 
-.for-whom__cards {
+.audience__cards,
+.audience__benefits {
+    display: grid;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.audience__cards {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.audience__card {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 16px;
+    padding: 20px;
+    text-align: left;
     gap: 20px;
+    max-width: 390px;
+}
+
+.audience__icon {
+    width: 94px;
+    height: 131px;
+    margin: 0;
+}
+
+.audience__text {
+    font-weight: 700;
+    font-size: 21px;
+    letter-spacing: 0.02em;
+    text-align: center;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.audience__benefits-top {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
     flex-wrap: wrap;
 }
 
-.for-whom__card {
-    background-color: #1c1c1e;
-    border-radius: 20px;
-    padding: 20px 25px;
-    color: #fff;
-    flex: 1;
-    min-width: 280px;
-    max-width: 360px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    border: 2px solid #008cff;
+.audience__benefits-bottom {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
 
+.audience__benefits {
+    max-width: 1000px;
+    margin: 0 auto 40px;
+}
+
+.audience__benefit {
+
+    padding: 20px;
+    text-align: center;
+    max-width: 345px;
+    min-height: 212px;
+    border: 4px solid #fff;
+    border-radius: 39px;
+}
+
+.audience__benefit.dark {
+    background: rgba(51, 57, 62, 0.57);
+}
+
+.audience__benefit.light {
+    background: rgba(251, 251, 251, 0.84);
+    color: #33393e;
+}
+
+
+.audience__benefit-icon {
+    width: 73px;
+    height: 80px;
+    margin-bottom: 12px;
+}
+
+.audience__benefit-text {
+    line-height: 1.4;
+    font-weight: 700;
+    font-size: 25px;
+    text-align: center;
+}
+
+.audience__button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding: 36px 55px;
+    background-color: transparent;
+    color: #fff;
+    font-size: 18px;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: color 0.3s ease, border-color 0.3s ease;
+    z-index: 1;
+    margin-left: 62dvh;
+    position: relative;
+    top: 20px;
+}
+
+.audience__button-icon,
+.audience__button-text {
+    position: relative;
+    z-index: 1;
+}
+
+.audience__button-icon {
+    transition: transform 0.6s ease;
+}
+
+.audience__button:hover .audience__button-icon {
+    transform: rotate(360deg);
+}
+
+.audience__button-wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #007bff;
+    z-index: 0;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+}
+
+.audience__button:hover .audience__button-wave {
+    transform: translateX(0);
+}
+
+@media (min-width: 1900px) and (max-width: 3500px) {
+    .audience__button {
+        left: -15dvh;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .audience__title,
+    .audience__subtitle {
+        font-size: 24px;
+    }
+
+    .audience__card,
+    .audience__benefit {
+        padding: 35px;
+    }
+
+    .audience__benefit-text,
+    .audience__text {
+        font-size: 14px;
+    }
+
+    .audience__benefits-bottom {
+        margin-left: 22px;
+    }
+
+    .audience__button {
+        margin: 20px auto 0 auto;
+        top: 0;
+        left: 0;
+        position: relative;
+        padding: 16px 35px;
+        font-size: 16px;
+        width: 100%;
+        max-width: 320px;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 380px) {
+    .audience__button {
+        width: 100%;
+        margin: 20px auto;
+        padding: 16px 35px;
+        font-size: 15px;
+    }
+
+    .audience__benefits-bottom {
+        margin-left: 1px;
+    }
+}
+
+/* AUDIENCE */
+
+/* WEBINAR */
+
+.webinar {
+    background: url('../img/form-bg.jpg') center/cover no-repeat;
+    padding: 100px 0;
+}
+
+.webinar__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.webinar__speaker {
+    position: relative;
     display: flex;
     flex-direction: row;
-    /* текст и иконка в строку */
-    align-items: center;
-    justify-content: space-between;
-    gap: 15px;
-    text-align: left;
+    align-items: flex-start;
+    background: #33393e;
+    border-radius: 39px;
+    padding: 40px;
+    margin-bottom: 60px;
+    max-width: 1144px;
+    min-height: 418px;
 }
 
-.for-whom__text {
-    font-size: 16px;
+.webinar__speaker-img {
+    width: 479px;
+    height: 719px;
+    border-radius: 20px;
+    margin-right: 20px;
+}
+
+.webinar__speaker-info {
+    color: #fff;
+    z-index: 2;
+}
+
+.webinar__title {
+    margin-bottom: 31px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 64px;
+    color: #fff;
+}
+
+.webinar__name {
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 0%;
+    color: #fff;
+    position: relative;
+    top: 19dvh;
+}
+
+.webinar__role {
+    position: relative;
+    top: 29dvh;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 0%;
+    background: linear-gradient(90deg, #fff 0%, #0077cf 100%);
+}
+
+.webinar__role-gradient {
+    background: linear-gradient(90deg, #fff 0%, #0077cf 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.webinar__desc {
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 0%;
     line-height: 1.4;
+    position: relative;
+    top: 35dvh;
+}
+
+.webinar__blur {
+    position: absolute;
+    bottom: -54px;
+    left: 0;
+    right: 0;
+    height: 135px;
+    width: 100%;
+    background: linear-gradient(360deg, rgba(51, 57, 62, 0) 0%, #33393e 100%);
+    border-radius: 39px;
+    z-index: 1;
+}
+
+/* Блок з текстом + форма */
+.webinar__form-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    gap: 40px;
+}
+
+.webinar__form-text {
     flex: 1;
+    min-width: 300px;
 }
 
-.for-whom__icon {
+.webinar__form-title {
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 110%;
+    margin-bottom: 20px;
+    min-width: 583px;
+}
+
+.webinar__form-title-bold {
+    font-weight: 700;
+    font-size: 68px;
+    line-height: 0%;
+    display: inline-block;
+    margin-right: 12px;
+}
+
+.webinar__form-paragraph {
+    font-weight: 700;
+    font-size: 24px;
+    color: #000;
+    max-width: 480px;
+    margin-bottom: 20px;
+
+}
+
+.webinar__form-list {
+    padding-left: 20px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 1.6;
+    list-style: none;
+}
+
+.webinar__form-list li {
+    margin-bottom: 10px;
+}
+
+.webinar__form-paragraph-bottom {
+    font-weight: 700;
+    font-size: 19px;
+    text-align: center;
+    max-width: 467px;
+}
+
+.webinar__form-block {
+    flex: 1;
+    max-width: 480px;
+    min-height: 578px;
+    box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25), 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    background: rgba(255, 255, 255, 0.93);
+    border-radius: 62px;
+    position: relative;
+    top: -11dvh;
+}
+
+.webinar__form input {
+    width: 427px;
+    height: 60px;
+    padding: 14px;
+    margin-bottom: 20px;
+    margin-top: 22px;
+    border: 1px solid #6c6c6c;
+    border-radius: 17px;
+    font-size: 16px;
+    position: relative;
+    z-index: 1;
+    top: 23dvh;
+    left: 3dvh;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    background: #ebebeb;
+}
+
+.webinar__button {
+    display: inline-flex;
+    align-items: center;
+    padding: 13px 55px;
+    background-color: transparent;
+    color: #000;
+    font-size: 18px;
+    font-weight: 600;
+    border: 2px solid #000;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: color 0.3s ease, border-color 0.3s ease;
+    z-index: 1;
+    position: relative;
+    top: 25dvh;
+    left: 10dvh;
+}
+
+.webinar__button-wave {
+    position: absolute;
+    inset: 0;
+    background-color: #007bff;
+    z-index: 0;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+}
+
+.webinar__button:hover .webinar__button-wave {
+    transform: translateX(0);
+}
+
+.webinar__button-icon {
     width: 50px;
-    height: 50px;
-    flex-shrink: 0;
+    height: 53px;
+    margin-right: 10px;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.6s ease;
 }
 
-/* FOR-WHOM */
+.webinar__button:hover .webinar__button-icon {
+    transform: rotate(360deg);
+}
+
+.webinar__button-text {
+    position: relative;
+    z-index: 1;
+}
+
+.webinar__button:hover {
+    color: #fff;
+    border-color: #007bff;
+}
+
+.iti {
+    width: 100%;
+}
+
+.webinar__form input[type="tel"] {
+    height: 55px;
+    font-size: 16px;
+    padding-left: 60px;
+    border-radius: 17px;
+    border: 1px solid #ccc;
+    width: 89%;
+    box-sizing: border-box;
+}
+
+.iti--separate-dial-code .iti__selected-flag {
+    background-color: transparent;
+    top: 23dvh;
+    left: 3dvh;
+}
+
+
+
+/* Адаптив */
+@media (min-width: 1900px) and (max-width: 3500px) {
+    .webinar__form {
+        position: relative;
+        top: -8dvh;
+    }
+
+    .webinar__speaker {
+        margin-bottom: 90px;
+    }
+}
+
+@media (max-width: 768px) {
+    .webinar__title {
+        font-size: 53px;
+    }
+
+    .webinar__form-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .webinar__form-text,
+    .webinar__form-block {
+        max-width: 103%;
+        top: 2dvh;
+    }
+
+    .webinar__speaker {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .webinar__name {
+        top: 1dvh;
+        line-height: 100%;
+        font-size: 30px;
+    }
+
+    .webinar__desc {
+        margin-top: 6px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.4;
+        position: relative;
+        top: 2dvh;
+    }
+
+    .webinar__role {
+        top: 7dvh;
+        margin-bottom: 70px;
+    }
+
+    .webinar__blur {
+        bottom: 455px;
+        height: 72px;
+        width: 100%;
+    }
+
+    .webinar__speaker-img {
+        margin-right: 44px;
+        margin-bottom: 20px;
+        width: 366px;
+    }
+
+    .webinar__form-title {
+        font-size: 25px;
+    }
+
+    .webinar__form-list {
+        padding-left: 3px;
+        font-size: 15px;
+    }
+
+    .webinar__form-paragraph-bottom {
+        margin-right: 32px;
+    }
+
+    .webinar__form-title-bold {
+        margin-right: 12px;
+        font-size: 19px;
+    }
+
+    .webinar__form input {
+        width: 216px;
+        height: 48px;
+        top: 13dvh;
+        left: 3dvh;
+    }
+
+    .webinar__button {
+        padding: 0px 3px;
+        top: 18dvh;
+        left: 3dvh;
+    }
+
+    .iti--separate-dial-code .iti__selected-flag {
+
+        top: 13dvh;
+    }
+}
+
+
+/* Для очень узких экранов (например, iPhone SE: 375px) */
+@media (max-width: 400px) {
+    .webinar__title {
+        font-size: 28px;
+    }
+
+    .webinar__form-title {
+        font-size: 18px;
+    }
+
+    .webinar__form input,
+    .webinar__button,
+    .iti {
+        max-width: 280px;
+    }
+
+    .webinar__speaker-img {
+        max-width: 260px;
+    }
+
+    .webinar__form input[type="tel"] {
+        width: 78%;
+        height: 50px;
+    }
+}
+
+/* Для широких смартфонов (iPhone XR, 12, 14 Pro Max и др.) */
+@media (min-width: 401px) and (max-width: 768px) {
+    .webinar__title {
+        font-size: 34px;
+    }
+
+    .webinar__form input,
+    .webinar__button,
+    .iti {
+        max-width: 360px;
+    }
+
+    .webinar__speaker-img {
+        max-width: 340px;
+    }
+
+    .webinar__form input[type="tel"] {
+        width: 73%;
+    }
+}
+
+/* WEBINAR */
