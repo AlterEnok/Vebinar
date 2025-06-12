@@ -267,7 +267,7 @@ a {
 
 /* ====== Man Image ====== */
 .card__man {
-    max-height: 90vh;
+    max-height: 110vh;
     height: auto;
     object-fit: contain;
     z-index: 5;
