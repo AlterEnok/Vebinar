@@ -379,7 +379,7 @@ a {
     }
 
     .card__title {
-        font-size: 23px;
+        font-size: 21px;
         margin-bottom: 20px;
         text-align: center;
     }
@@ -431,6 +431,11 @@ a {
     .card__button {
         left: -9dvh;
         top: 194px;
+    }
+
+    .card__title {
+        font-size: 22px;
+
     }
 
     .card__datetime {
