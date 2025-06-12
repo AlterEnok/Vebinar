@@ -402,20 +402,20 @@ a {
 
     .card__platform {
         margin-left: 61px;
-        top: 88px;
+        top: 63px;
     }
 
     .card__datetime {
         font-size: 18px;
         margin-left: 67px;
-        top: 82px;
+        top: 61px;
     }
 
     .card__button {
         width: 78%;
         font-size: 15px;
         padding: 10px 16px;
-        margin-top: 21px;
+        margin-top: -1px;
         left: -12dvh;
     }
 
