@@ -669,6 +669,7 @@ a {
     margin-bottom: 60px;
     max-width: 1144px;
     min-height: 418px;
+    opacity: 0.9;
 }
 
 .webinar__speaker-img {
