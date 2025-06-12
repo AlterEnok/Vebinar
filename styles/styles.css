@@ -355,7 +355,7 @@ a {
         justify-content: center;
         font-size: 16px;
         padding: 12px 20px;
-        margin-top: 113px;
+        margin-top: 100px;
         left: -9dvh;
     }
 
@@ -402,21 +402,22 @@ a {
 
     .card__platform {
         margin-left: 61px;
-        top: 63px;
+        top: 55px;
     }
 
     .card__datetime {
         font-size: 18px;
         margin-left: 67px;
-        top: 61px;
+        top: 49px;
     }
 
     .card__button {
         width: 78%;
         font-size: 15px;
         padding: 10px 16px;
-        margin-top: -1px;
+        margin-top: -14px;
         left: -12dvh;
+
     }
 
     .card__button-icon {
@@ -429,7 +430,7 @@ a {
 @media (max-width: 430px) and (min-height: 671px) {
     .card__button {
         left: -9dvh;
-        top: 182px;
+        top: 194px;
     }
 
     .card__datetime {
