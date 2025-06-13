@@ -205,25 +205,6 @@ a {
     right: -10px;
 }
 
-/* ====== Button ====== */
-/* .card__button {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 55px 54px;
-    background-color: transparent;
-    color: #fff;
-    font-size: 18px;
-    border: 2px solid #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    cursor: pointer;
-    margin-left: 122px;
-    transition: color 0.3s ease, border-color 0.3s ease;
-    top: 55px;
-    height: 60px;
-} */
 
 .card__button {
     position: relative;
@@ -522,6 +503,161 @@ a {
     }
 }
 
+
+
+/* iPad Mini 768x1024 */
+@media (min-width: 768px) and (max-width: 819px) {
+    .card {
+        flex-direction: column;
+        padding-top: 40px;
+    }
+
+    .card__logo-image {
+        width: 220px;
+        left: 80px;
+    }
+
+    .card__man {
+        top: 214px;
+        left: -211px;
+    }
+
+    .card__logo {
+        margin-left: 166px;
+    }
+
+    .card__title {
+        font-size: 24px;
+        text-align: center;
+        margin-right: -91px;
+    }
+
+    .card__subtitle {
+        font-size: 18px;
+        margin-left: 52px;
+    }
+
+    .card__notice {
+        font-size: 28px;
+        margin-left: 23dvh;
+        top: 15dvh;
+    }
+
+    .card__platform {
+        margin-left: 251px;
+        top: 152px;
+    }
+
+    .card__datetime {
+        font-size: 21px;
+        margin-left: 246px;
+        top: 170px;
+    }
+
+    .card__button {
+        width: 70%;
+        font-size: 17px;
+        margin-top: 141px;
+        left: 86px;
+    }
+
+
+}
+
+/* iPad Air 820x1180 */
+@media (min-width: 820px) and (max-width: 1023px) {
+    .card {
+        flex-direction: row;
+        padding-top: 50px;
+    }
+
+    .card__logo-image {
+        width: 230px;
+        left: 100px;
+    }
+
+
+
+    .card__title {
+        font-size: 26px;
+        text-align: left;
+    }
+
+    .card__subtitle {
+        font-size: 19px;
+        margin-left: 60px;
+    }
+
+    .card__notice {
+        font-size: 29px;
+        margin-left: 46px;
+        top: 90px;
+    }
+
+    .card__platform {
+        margin-left: 90px;
+        top: 102px;
+    }
+
+    .card__datetime {
+        font-size: 21px;
+        margin-left: 90px;
+        top: 114px;
+    }
+
+    .card__button {
+        width: 60%;
+        font-size: 17px;
+        margin-top: 60px;
+        left: 0;
+    }
+
+}
+
+/* iPad Pro 1024x1366 */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .card__logo-image {
+        width: 250px;
+        left: 120px;
+    }
+
+    .card__title {
+        font-size: 30px;
+        text-align: left;
+    }
+
+    .card__subtitle {
+        font-size: 20px;
+        margin-left: 70px;
+    }
+
+    .card__notice {
+        font-size: 30px;
+        margin-left: 56px;
+        top: 80px;
+    }
+
+    .card__platform {
+        margin-left: 100px;
+        top: 90px;
+    }
+
+    .card__datetime {
+        font-size: 22px;
+        margin-left: 100px;
+        top: 102px;
+    }
+
+    .card__button {
+        width: 55%;
+        font-size: 18px;
+        margin-top: 50px;
+        left: 0;
+    }
+
+
+}
+
 /* MEDIA */
 
 /* AUDIENCE */
@@ -745,6 +881,107 @@ a {
 
     .audience__benefits-bottom {
         margin-left: 1px;
+    }
+}
+
+
+/* iPad Mini (768–819px) */
+@media (min-width: 768px) and (max-width: 819px) {
+
+    .audience__title,
+    .audience__subtitle {
+        font-size: 26px;
+        text-align: center;
+    }
+
+    .audience__card,
+    .audience__benefit {
+        padding: 40px 30px;
+    }
+
+    .audience__benefit-text,
+    .audience__text {
+        font-size: 15px;
+    }
+
+    .audience__benefits-bottom {
+        margin-left: 30px;
+    }
+
+    .audience__button {
+        font-size: 17px;
+        padding: 16px 40px;
+        max-width: 320px;
+        margin: 30px auto 0;
+        position: relative;
+        left: 0;
+    }
+}
+
+/* iPad Air (820–1023px) */
+@media (min-width: 820px) and (max-width: 1023px) {
+
+    .audience__title,
+    .audience__subtitle {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .audience__card,
+    .audience__benefit {
+        padding: 45px 35px;
+    }
+
+    .audience__benefit-text,
+    .audience__text {
+        font-size: 16px;
+    }
+
+    .audience__benefits-bottom {
+        margin-left: 40px;
+    }
+
+    .audience__button {
+        font-size: 18px;
+        padding: 16px 45px;
+        max-width: 340px;
+        margin: 35px auto 0;
+        position: relative;
+        left: 221px;
+    }
+}
+
+/* iPad Pro (1024–1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+
+    .audience__title,
+    .audience__subtitle {
+        font-size: 30px;
+
+    }
+
+    .audience__card,
+    .audience__benefit {
+        padding: 50px 40px;
+    }
+
+    .audience__benefit-text,
+    .audience__text {
+        font-size: 12px;
+    }
+
+    .audience__benefits-bottom {
+        margin-left: 50px;
+    }
+
+    .audience__button {
+        font-size: 18px;
+        padding: 18px 50px;
+        max-width: 360px;
+        margin: 40px auto 0;
+        position: relative;
+        left: 332px;
+
     }
 }
 
@@ -1185,6 +1422,221 @@ a {
     .webinar__role {
         top: 6dvh;
         font-size: 30px;
+    }
+}
+
+
+/* iPad Mini (768–819px) */
+@media (min-width: 768px) and (max-width: 819px) {
+    .webinar__title {
+        font-size: 46px;
+        text-align: center;
+    }
+
+    .webinar__form-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .webinar__form-text,
+    .webinar__form-block {
+        max-width: 67%;
+        top: 2dvh;
+    }
+
+    .webinar__speaker {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .webinar__speaker-img {
+        width: 300px;
+        height: auto;
+        margin-bottom: 20px;
+        margin-right: 0;
+    }
+
+    .webinar__name {
+        font-size: 26px;
+        top: 1dvh;
+    }
+
+    .webinar__role {
+        top: 4dvh;
+        font-size: 18px;
+    }
+
+    .webinar__desc {
+        font-size: 15px;
+        top: 2.5dvh;
+    }
+
+    .webinar__form-title {
+        font-size: 22px;
+    }
+
+    .webinar__form input {
+        width: 270px;
+        height: 50px;
+        top: 10dvh;
+        left: 75px;
+    }
+
+    .webinar__button {
+        top: 13dvh;
+        left: 68px;
+        padding: 10px 25px;
+    }
+
+    .iti--separate-dial-code .iti__selected-flag {
+        top: 10dvh;
+    }
+
+    .iti--separate-dial-code .iti__selected-flag {
+        left: 7dvh;
+    }
+
+
+    .webinar__blur {
+        bottom: 266px;
+        height: 72px;
+        width: 100%;
+    }
+}
+
+/* iPad Air (820–1023px) */
+@media (min-width: 820px) and (max-width: 1023px) {
+    .webinar__title {
+        font-size: 50px;
+        text-align: center;
+    }
+
+    .webinar__form-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .webinar__form-text,
+    .webinar__form-block {
+
+        top: 1dvh;
+    }
+
+    .webinar__speaker {
+
+        align-items: center;
+        text-align: center;
+    }
+
+    .webinar__speaker-img {
+        width: 340px;
+        height: auto;
+        margin-bottom: 20px;
+        margin-right: 0;
+    }
+
+    .webinar__name {
+        font-size: 28px;
+        top: -3dvh;
+    }
+
+    .webinar__role {
+        top: 1dvh;
+        font-size: 19px;
+    }
+
+    .webinar__desc {
+        font-size: 16px;
+        top: 4.5dvh;
+    }
+
+    .webinar__form-title {
+        font-size: 23px;
+    }
+
+    .webinar__form input {
+
+        height: 50px;
+        top: 11dvh;
+
+    }
+
+    .webinar__button {
+        top: 12dvh;
+        left: 101px;
+        padding: 12px 30px;
+
+    }
+
+    .iti--separate-dial-code .iti__selected-flag {
+        top: 11dvh;
+    }
+}
+
+/* iPad Pro (1024–1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .webinar__title {
+        font-size: 56px;
+    }
+
+    .webinar__form-wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .webinar__form-text,
+    .webinar__form-block {
+        max-width: 48%;
+        top: 1dvh;
+    }
+
+    .webinar__speaker {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+    }
+
+    .webinar__speaker-img {
+        width: 400px;
+        height: auto;
+        margin-right: 30px;
+    }
+
+    .webinar__name {
+        font-size: 30px;
+        top: 2dvh;
+    }
+
+    .webinar__role {
+        top: 7dvh;
+        font-size: 20px;
+    }
+
+    .webinar__desc {
+        font-size: 17px;
+        top: 10.5dvh;
+    }
+
+    .webinar__form-title {
+        font-size: 24px;
+    }
+
+    .webinar__form input {
+
+        height: 52px;
+        top: 10dvh;
+
+    }
+
+    .webinar__button {
+        top: 14dvh;
+        left: 102px;
+        padding: 12px 32px;
+    }
+
+    .iti--separate-dial-code .iti__selected-flag {
+        top: 10dvh;
     }
 }
 
