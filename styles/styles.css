@@ -1064,7 +1064,7 @@ a {
     }
 
     .webinar__name {
-        top: 1dvh;
+        top: 2dvh;
         line-height: 100%;
         font-size: 30px;
     }
@@ -1151,7 +1151,7 @@ a {
     }
 
     .webinar__speaker-img {
-        max-width: 260px;
+        max-width: 340px;
     }
 
     .webinar__form input[type="tel"] {
@@ -1173,7 +1173,7 @@ a {
     }
 
     .webinar__speaker-img {
-        max-width: 340px;
+        max-width: 370px;
     }
 
     .webinar__form input[type="tel"] {
